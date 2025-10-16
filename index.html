@@ -2,207 +2,186 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sushruthi Panakanti • Portfolio</title>
-  <meta name="description" content="Portfolio of Sushruthi Panakanti – Research Data Analyst at MODEL-AD (SNRI). IHC automation, MRI pipelines, analytics, and publications." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sushruthi Panakanti | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --bg: #0b0c10;
-      --card: #111318;
-      --text: #e9edf1;
-      --muted: #b8c1cc;
-      --accent: #61dafb;
-      --link: #9ad8ff;
-      --border: #22262e;
-      --chip: #1a1f27;
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fafafa;
+      color: #222;
+      line-height: 1.6;
     }
-    * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
-    body { background: var(--bg); color: var(--text); line-height: 1.6; }
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 24px; }
-    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0 16px; position: sticky; top: 0; backdrop-filter: blur(8px); background: rgba(11,12,16,0.6); border-bottom: 1px solid var(--border); z-index: 50; }
-    .brand { font-weight: 700; letter-spacing: .5px; }
-    nav a { margin-left: 18px; font-weight: 500; }
-    .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; padding: 42px 0; }
-    .hero h1 { margin: 0 0 12px; font-size: clamp(28px, 4vw, 44px); line-height: 1.15; }
-    .hero p { margin: 0 0 18px; color: var(--muted); }
-    .badge { display: inline-block; background: var(--chip); color: var(--muted); border: 1px solid var(--border); padding: 6px 10px; border-radius: 999px; font-size: 12px; margin-right: 8px; }
-    .cta { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: #001018; border-radius: 12px; padding: 10px 14px; font-weight: 600; border: none; cursor: pointer; box-shadow: 0 6px 20px rgba(97,218,251,.2); }
-    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
-    .card { grid-column: span 12; background: var(--card); border: 1px solid var(--border); padding: 18px; border-radius: 16px; }
-    .card h3 { margin: 0 0 4px; }
-    .meta { color: var(--muted); font-size: 14px; margin-top: 4px; }
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-    .chip { background: var(--chip); color: var(--muted); border: 1px solid var(--border); padding: 4px 10px; border-radius: 999px; font-size: 12px; }
-    section { padding: 26px 0; }
-    section h2 { margin: 0 0 12px; font-size: 22px; letter-spacing: .3px; }
-    footer { padding: 28px 0 48px; color: var(--muted); border-top: 1px solid var(--border); margin-top: 24px; }
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .list { margin: 0; padding-left: 18px; }
-    .list li { margin: 8px 0; }
-    @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .two-col { grid-template-columns: 1fr; } }
+    header {
+      background: linear-gradient(120deg, #7b2ff7, #f107a3);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: #333;
+      text-decoration: none;
+      padding: 15px 20px;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #7b2ff7;
+    }
+    section {
+      padding: 80px 10%;
+    }
+    .section-title {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 50px;
+      color: #7b2ff7;
+    }
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+    .about img {
+      width: 250px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .about-text {
+      flex: 1;
+      min-width: 280px;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .project {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+    }
+    .project h3 {
+      color: #7b2ff7;
+      margin-bottom: 10px;
+    }
+    .contact {
+      text-align: center;
+    }
+    .contact a {
+      color: #7b2ff7;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
-      <div class="brand">Sushruthi Panakanti</div>
-      <nav>
-        <a href="#projects">Projects</a>
-        <a href="#publications">Papers & Talks</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+    <h1>Sushruthi Panakanti</h1>
+    <p>Research Data Analyst | Health Informatics | Alzheimer’s Research</p>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <div>
-        <span class="badge">Research Data Analyst • MODEL-AD (SNRI)</span>
-        <h1>Automating IHC, MRI & Analytics for Alzheimer’s research</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#publications">Publications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about">
+      <img src="profile.jpg" alt="Sushruthi Panakanti">
+      <div class="about-text">
         <p>
-          I build reproducible pipelines for IHC cell detection (Imaris XT), MRI preprocessing and masking, and statistical/ML analyses across large experimental datasets. My work is part of the <a href="https://adknowledgeportal.synapse.org/Explore/Programs/DetailsPage?Program=MODEL-AD" target="_blank" rel="noopener">MODEL-AD</a> program at the <a href="https://medicine.iu.edu/research/centers-institutes/stark-neurosciences" target="_blank" rel="noopener">Stark Neurosciences Research Institute</a>.
+          I’m a Research Data Analyst at the MODEL-AD Lab, Stark Neurosciences Research Institute, Indiana University School of Medicine. My work bridges clinical and pre-clinical research, focusing on Alzheimer’s disease data analysis, automation, and imaging pipelines using Imaris XT and Python.
         </p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;">
-          <a class="cta" href="#projects">Explore Projects →</a>
-          <a class="cta" style="background:#1f6feb;color:#e9edf1;box-shadow:none;" href="https://www.linkedin.com/in/sushruthi-panakanti/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="cta" style="background:#24292f;color:#e9edf1;box-shadow:none;" href="https://github.com/psushruthi" target="_blank" rel="noopener">GitHub</a>
-        </div>
+        <p>
+          With a background in dentistry and a master’s in Health Informatics, I combine analytical rigor with a clinical understanding to build reproducible workflows that advance neuroscience research.
+        </p>
       </div>
-      <div class="card">
-        <h3 style="margin-top:0;">Highlights</h3>
-        <ul class="list">
-          <li>Automated IHC cell detection: NeuN, GFAP, IBA1 surfaces via Imaris XT scripts</li>
-          <li>MRI pipeline work: T2 masking (2D CompNet), preprocessing, QA</li>
-          <li>Analytics: cohort-wise comparisons (sex, diet, genotype, timepoints)</li>
-        </ul>
-        <div class="chips">
-          <span class="chip">Imaris XT (Python)</span>
-          <span class="chip">MRI (FSL, ITK-SNAP)</span>
-          <span class="chip">Python / R</span>
-          <span class="chip">Power BI / Tableau</span>
-        </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 class="section-title">Experience</h2>
+    <ul>
+      <li><strong>Research Data Analyst</strong> – MODEL-AD Lab, Indiana University School of Medicine (2024–Present)</li>
+      <li><strong>Graduate Research Assistant</strong> – IU Luddy School of Informatics (2023–2024)</li>
+      <li><strong>Clinical Research Assistant</strong> – IU School of Medicine (2023)</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-grid">
+      <div class="project">
+        <h3>Automated Neuron Counting in Imaris XT</h3>
+        <p>Developed Python scripts to automate cell detection in IHC images, improving reproducibility in Alzheimer’s datasets.</p>
       </div>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="grid">
-        <article class="card" style="grid-column: span 12;">
-          <h3>IHC Images – Automated Cell Detection (KOOB Analysis)</h3>
-          <p class="meta">Imaris XT pipeline for colocalization and surface detection; reproducible exports</p>
-          <p>
-            Builds colocalized channels (marker ∩ DAPI) and detects GFAP/IBA1/NeuN surfaces in hippocampus & cortex. Includes <a href="https://github.com/psushruthi/ihc-images-automated-cell-detection" target="_blank" rel="noopener">scripts</a> and results workbook <a href="https://github.com/psushruthi/ihc-images-automated-cell-detection/blob/main/Results/KOOB%20STAINING.xlsx" target="_blank" rel="noopener">KOOB STAINING.xlsx</a>.
-          </p>
-          <div class="chips">
-            <span class="chip">Imaris XT</span>
-            <span class="chip">IHC</span>
-            <span class="chip">Automation</span>
-            <span class="chip">Reproducibility</span>
-          </div>
-        </article>
-
-        <article class="card" style="grid-column: span 12;">
-          <h3>Life Expectancy – Global Insights</h3>
-          <p class="meta">Exploratory & predictive analytics on global health indicators</p>
-          <p>
-            Cleaned and analyzed multi-country datasets; feature engineering and modeling with visual storytelling. Repository: <a href="https://github.com/psushruthi/life-expectancy-global-insights" target="_blank" rel="noopener">life-expectancy-global-insights</a>.
-          </p>
-          <div class="chips">
-            <span class="chip">Python</span>
-            <span class="chip">EDA</span>
-            <span class="chip">Visualization</span>
-          </div>
-        </article>
-
-        <article class="card" style="grid-column: span 12;">
-          <h3>Mouse T2 Brain Masking (L2M28L)</h3>
-          <p class="meta">2D CompNet adaptation, preprocessing pipeline, and dataset organization</p>
-          <p>
-            Sliced 3D volumes to 2D axial for training; configured environments and reproducible settings; organized cohorts by age, sex, and diet; integrated QA steps.
-          </p>
-          <div class="chips">
-            <span class="chip">TensorFlow/Keras</span>
-            <span class="chip">Medical Imaging</span>
-            <span class="chip">Segmentation</span>
-          </div>
-        </article>
+      <div class="project">
+        <h3>3D Mouse Brain Masking (MRI)</h3>
+        <p>Built a deep learning pipeline for T2 MRI segmentation using 3D CNNs and TensorFlow on HPC systems.</p>
       </div>
-    </section>
-
-    <section id="publications">
-      <h2>Papers & Talks</h2>
-      <div class="two-col">
-        <div class="card">
-          <h3>Poster • Goodman Hall Symposium</h3>
-          <p class="meta">Data-Driven Insights into the <em>Plcg2M28L</em> Risk Variant</p>
-          <p>Presented analytic findings comparing LOAD2 vs. LOAD2.M28L, highlighting informatics and reproducible workflows.</p>
-        </div>
-        <div class="card">
-          <h3>AMIA (in progress)</h3>
-          <p class="meta">From Education to Practice: Evaluating Workforce Readiness in Health Informatics</p>
-          <p>Manuscript preparation leveraging lab and coursework experience; methods emphasize reproducibility and impact.</p>
-        </div>
+      <div class="project">
+        <h3>ClimbR API Workflow</h3>
+        <p>Collaborated with JAX and MODEL-AD teams to develop R-based pipelines for Climb database automation.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <div class="two-col">
-        <div class="card">
-          <h3>Summary</h3>
-          <p>
-            Research Data Analyst at <a href="https://medicine.iu.edu/research/centers-institutes/stark-neurosciences" target="_blank" rel="noopener">SNRI</a> working within <a href="https://adknowledgeportal.synapse.org/Explore/Programs/DetailsPage?Program=MODEL-AD" target="_blank" rel="noopener">MODEL-AD</a>. I automate IHC and MRI workflows, build analytics dashboards, and support lab reproducibility and data hygiene across large experimental datasets.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Focus Areas</h3>
-          <ul class="list">
-            <li>IHC automation in Imaris XT: colocalization, surface detection, batch exports</li>
-            <li>MRI preprocessing & masking; dataset curation and QA</li>
-            <li>Experimental design support; cohort-level analytics; visualization</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+  <section id="publications">
+    <h2 class="section-title">Publications & Presentations</h2>
+    <ul>
+      <li>Goodman Hall Symposium Poster (2025): <em>Data-Driven Insights into the Plcg2M28L Risk Variant</em></li>
+      <li>AMIA Submission (2025): <em>From Education to Practice: Evaluating Workforce Readiness in Health Informatics</em></li>
+    </ul>
+  </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="two-col">
-        <div class="card">
-          <p><strong>Email:</strong> <a href="mailto:spanakan@iu.edu">spanakan@iu.edu</a></p>
-          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/spanakanti/" target="_blank" rel="noopener">Sushruthi Panakanti</a></p>
-          <p><strong>GitHub:</strong> <a href="https://github.com/psushruthi" target="_blank" rel="noopener">@psushruthi</a></p>
-        </div>
-        <div class="card">
-          <h3>Attribution & License</h3>
-          <p>
-            © <span id="year"></span> <a href="https://www.linkedin.com/in/sushruthi-panakanti/" target="_blank" rel="noopener">Sushruthi Panakanti</a>. Content reflects work conducted within the MODEL-AD consortium at the Stark Neurosciences Research Institute, Indiana University.
-          </p>
-          <p>
-            Unless otherwise noted, code on this site is released under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT License</a>. Please check individual repositories for details.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact">
+      <p>Let’s connect:</p>
+      <a href="mailto:sushruthi.panakanti@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/sushruthipanakanti">LinkedIn</a>
+      <a href="https://github.com/sushruthi-pan">GitHub</a>
+    </div>
+  </section>
 
   <footer>
-    <div class="container">
-      <small>
-        Built with simple HTML/CSS. Deployed via GitHub Pages. Links to external resources are for reference; trademarks belong to their respective owners.
-      </small>
-    </div>
+    <p>© 2025 Sushruthi Panakanti | Built with ❤️ using GitHub Pages</p>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
