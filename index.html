@@ -13,24 +13,22 @@
 <body>
 
 <div class="grain" aria-hidden="true"></div>
-
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
   <div class="wrap header-row">
-    <a href="#top" class="wordmark">Sushruthi Panakanti</a>
-    <nav class="site-nav" aria-label="Primary">
-      <a href="#work">Work</a>
-      <a href="#path">Path</a>
-      <a href="#toolkit">Toolkit</a>
-      <a href="#contact">Contact</a>
+    <a href="index.html" class="wordmark">Sushruthi Panakanti</a>
+    <nav class="tab-nav" aria-label="Primary">
+      <a href="index.html" class="tab is-active"><span class="tab-num mono">01</span>Home</a>
+      <a href="projects.html" class="tab"><span class="tab-num mono">02</span>Projects</a>
+      <a href="experience.html" class="tab"><span class="tab-num mono">03</span>Experience</a>
+      <a href="contact.html" class="tab"><span class="tab-num mono">04</span>Contact</a>
     </nav>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- HERO -->
   <section class="hero" id="top">
     <div class="wrap hero-grid">
       <div class="hero-copy">
@@ -42,9 +40,8 @@
           Most data people haven't stood chairside with a patient. Most clinicians haven't written a batch-processing pipeline. I've done both, and it changes how I build things: every pipeline I ship has to survive contact with a real dataset, a real deadline, and someone who isn't going to read the documentation.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:spanakan@iu.edu">Get in touch</a>
-          <a class="btn btn-ghost" href="https://github.com/psushruthi" target="_blank" rel="noopener">GitHub ↗</a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/in/spanakanti" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn btn-primary" href="projects.html">See the work</a>
+          <a class="btn btn-ghost" href="contact.html">Get in touch</a>
         </div>
       </div>
 
@@ -59,198 +56,33 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section class="about wrap" id="about">
-    <div class="about-grid">
-      <p class="section-label mono">01 — About</p>
-      <div class="about-copy">
-        <p class="pull">
-          My path here wasn't a straight line: dental surgery, then a Master's in Health Informatics, then two clinical data coordinator roles before landing in a neuroscience lab building imaging pipelines for NIH-funded Alzheimer's research.
-        </p>
-        <p>
-          That order matters more than it looks like it should. Clinical training taught me what a data point actually costs to collect, and what it means when it's wrong. Now I spend my days writing Python and Bash that turn hundreds of raw microscopy images or MRI scans into analysis-ready, reproducible output — and structured clinical data management (REDCap, Cerner, OnCore) that has to hold up under audit. I care less about being the most technically clever person in the room and more about whether the person who inherits my pipeline six months from now can actually run it.
-        </p>
-      </div>
+    <p class="section-label mono">About</p>
+    <div class="pull-wrap">
+      <p class="pull">
+        My path here wasn't a straight line: dental surgery, then a Master's in Health Informatics, then two clinical data coordinator roles before landing in a neuroscience lab building imaging pipelines for NIH-funded Alzheimer's research.
+      </p>
     </div>
-  </section>
+    <p class="about-body">
+      That order matters more than it looks like it should. Clinical training taught me what a data point actually costs to collect, and what it means when it's wrong. Now I spend my days writing Python and Bash that turn hundreds of raw microscopy images or MRI scans into analysis-ready, reproducible output — and structured clinical data management (REDCap, Cerner, OnCore) that has to hold up under audit. I care less about being the most technically clever person in the room and more about whether the person who inherits my pipeline six months from now can actually run it.
+    </p>
 
-  <!-- SELECTED WORK -->
-  <section class="work wrap" id="work">
-    <p class="section-label mono">02 — Selected work</p>
-    <h2 class="section-title">Pipelines I've built and run in production.</h2>
-
-    <div class="project-list">
-
-      <!-- Project 1 -->
-      <article class="project" data-channel="teal">
-        <div class="project-marker" aria-hidden="true"><span class="dot dot-teal small"></span></div>
-        <div class="project-body">
-          <p class="project-meta mono">Python · Imaris XT · Fiji/ImageJ — Fluorescence microscopy</p>
-          <h3 class="project-title">Multi-channel fluorescence microscopy pipeline (KOOB)</h3>
-          <p class="project-text">
-            A four-combination antibody/region imaging workflow that used to require manual channel compositing, ROI definition, and marker quantification for every single image. I scripted the full workflow end-to-end — mask, colocalize, detect surfaces — as a modular pipeline with per-batch CSV logging and skip-completed logic, so a failed run picks up where it left off instead of starting over.
-          </p>
-          <ul class="project-outcomes">
-            <li>216 images processed in batches of ~50, ~12 minutes per image, unattended overnight</li>
-            <li>Threshold tuning validated against known colocalization patterns before rollout</li>
-          </ul>
-          <a class="project-link" href="https://github.com/psushruthi/koob-2026" target="_blank" rel="noopener">View repo ↗</a>
-        </div>
-      </article>
-
-      <!-- Project 2 -->
-      <article class="project" data-channel="rust">
-        <div class="project-marker" aria-hidden="true"><span class="dot dot-rust small"></span></div>
-        <div class="project-body">
-          <p class="project-meta mono">Python · YAML config — Adopted as lab standard</p>
-          <h3 class="project-title">Amyloid-beta uptake quantification pipeline</h3>
-          <p class="project-text">
-            Built from scratch as a config-driven pipeline rather than a one-off script: a YAML file defines the study, and the same code runs colocalization and masking logic against it. That decision paid off almost immediately — the pipeline is now the lab's standard approach for amyloid-beta uptake analysis, used by people who never touched the code that built it.
-          </p>
-          <ul class="project-outcomes">
-            <li>Config-per-study design means new experiments don't require new code</li>
-            <li>Caught and fixed a masking logic bug before it reached published results</li>
-          </ul>
-          <a class="project-link" href="https://github.com/psushruthi/a-beta-uptake" target="_blank" rel="noopener">View repo ↗</a>
-        </div>
-      </article>
-
-      <!-- Project 3 -->
-      <article class="project" data-channel="blue">
-        <div class="project-marker" aria-hidden="true"><span class="dot dot-blue small"></span></div>
-        <div class="project-body">
-          <p class="project-meta mono">FSL · ANTs · PALM · SLURM/HPC — Neuroimaging</p>
-          <h3 class="project-title">Voxel-based morphometry pipeline for a rodent AD model</h3>
-          <p class="project-text">
-            Structural MRI analysis of brain volume across age, diet, and sex in a rodent Alzheimer's model — DICOM-to-NIfTI conversion, ANTs registration, FSL/ITK-SNAP segmentation, and PALM statistical modeling, orchestrated and monitored as SLURM array jobs on IU's HPC cluster. I extended an existing pipeline framework rather than starting from zero, which meant learning to debug someone else's architecture under a live study deadline.
-          </p>
-          <ul class="project-outcomes">
-            <li>Standardized, reproducible outputs across a multi-cohort, multi-subject dataset</li>
-            <li>Built an HTML mosaic reporting tool (nibabel/matplotlib) for fast visual QC</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- Project 4 -->
-      <article class="project" data-channel="teal">
-        <div class="project-marker" aria-hidden="true"><span class="dot dot-teal small"></span></div>
-        <div class="project-body">
-          <p class="project-meta mono">Python · dcm2niix · Bash — Longitudinal data pipeline</p>
-          <h3 class="project-title">LOAD3 longitudinal MRI data pipeline</h3>
-          <p class="project-text">
-            A longitudinal imaging study means the same data-wrangling problem repeated across cohorts, diets, sexes, and timepoints — with every spreadsheet export threatening to mangle a microchip ID into scientific notation. I built a CSV-driven pipeline that converts DICOM to NIfTI, renames files against a source-of-truth naming spreadsheet, and audits for scan series that don't match convention instead of silently skipping them.
-          </p>
-          <ul class="project-outcomes">
-            <li>CSV-driven design avoids picking up stray or leftover scan series</li>
-            <li>Built-in audit step flags mismatched files for manual review instead of failing silently</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- Project 5 -->
-      <article class="project" data-channel="rust">
-        <div class="project-marker" aria-hidden="true"><span class="dot dot-rust small"></span></div>
-        <div class="project-body">
-          <p class="project-meta mono">Power BI · REDCap · Cerner · OnCore — Clinical data &amp; reporting</p>
-          <h3 class="project-title">Clinical data management &amp; institutional reporting</h3>
-          <p class="project-text">
-            Before pipelines, there's the less glamorous work of making sure the data is right in the first place. I managed clinical research data across REDCap, Cerner, and OnCore for NIH-funded hepatology studies under GCP and IRB standards, and separately built Power BI dashboards supporting leadership decisions across 100+ residency and fellowship programs.
-          </p>
-          <ul class="project-outcomes">
-            <li>Source data verification and HIPAA-compliant handling for active clinical trials</li>
-            <li>Recognized with a Student Employee of the Year nomination for reporting reliability</li>
-          </ul>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- PATH / TIMELINE -->
-  <section class="path wrap" id="path">
-    <p class="section-label mono">03 — Path</p>
-    <h2 class="section-title">How I got from a dental chair to a HPC cluster.</h2>
-
-    <ol class="timeline">
-      <li class="timeline-item">
-        <span class="timeline-num mono">01</span>
-        <div>
-          <p class="timeline-role">General Dentist &amp; House Surgeon</p>
-          <p class="timeline-org mono">Sri Snigdha Dental Clinic · Government Dental College &amp; Hospital, Hyderabad — 2021–2023</p>
-          <p class="timeline-text">Restorative, endodontic, and surgical care, plus a full-time rotating internship at a high-volume public teaching hospital. Where the instinct for accurate documentation started.</p>
-        </div>
-      </li>
-      <li class="timeline-item">
-        <span class="timeline-num mono">02</span>
-        <div>
-          <p class="timeline-role">Clinical Data Coordinator, Gastroenterology &amp; Hepatology</p>
-          <p class="timeline-org mono">Indiana University School of Medicine — Dec 2023 – Mar 2024</p>
-          <p class="timeline-text">First real exposure to research data infrastructure: REDCap, Cerner, OnCore, source data verification, GCP and IRB compliance.</p>
-        </div>
-      </li>
-      <li class="timeline-item">
-        <span class="timeline-num mono">03</span>
-        <div>
-          <p class="timeline-role">Communications Coordinator, Graduate Medical Education</p>
-          <p class="timeline-org mono">Indiana University School of Medicine — Aug 2024 – May 2025</p>
-          <p class="timeline-text">Data reporting and Power BI dashboards across 100+ residency and fellowship programs, alongside graduate coursework.</p>
-        </div>
-      </li>
-      <li class="timeline-item">
-        <span class="timeline-num mono">04</span>
-        <div>
-          <p class="timeline-role">Research Data Analyst</p>
-          <p class="timeline-org mono">Stark Neurosciences Research Institute, IU School of Medicine — Sept 2024 – Present</p>
-          <p class="timeline-text">Automated imaging pipelines and structured data workflows for NIH-funded Alzheimer's research, under Drs. Bruce Lamb and Adrian Oblak.</p>
-        </div>
-      </li>
-    </ol>
-
-    <div class="education-row">
-      <div class="edu-item">
-        <p class="edu-degree">MS, Health Informatics</p>
-        <p class="edu-org mono">Indiana University Indianapolis — Aug 2023 – May 2025</p>
-      </div>
-      <div class="edu-item">
-        <p class="edu-degree">BDS, Bachelor of Dental Surgery</p>
-        <p class="edu-org mono">KLE Vishwanath Katti Institute — Sept 2017 – Dec 2022</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- TOOLKIT -->
-  <section class="toolkit wrap" id="toolkit">
-    <p class="section-label mono">04 — Toolkit</p>
-    <h2 class="section-title">What I reach for.</h2>
-
-    <div class="toolkit-grid">
-      <div class="toolkit-group">
-        <p class="toolkit-heading">Imaging &amp; pipelines</p>
-        <p class="toolkit-items">Python, Bash, Imaris (ImarisXT), Fiji/ImageJ (Jython), image segmentation, batch automation</p>
-      </div>
-      <div class="toolkit-group">
-        <p class="toolkit-heading">Neuroimaging</p>
-        <p class="toolkit-items">DICOM, NIfTI, FSL, ANTs, ITK-SNAP, PALM, HPC/SLURM</p>
-      </div>
-      <div class="toolkit-group">
-        <p class="toolkit-heading">Clinical data</p>
-        <p class="toolkit-items">REDCap, Cerner, OnCore, GCP, IRB, HIPAA, source data verification</p>
-      </div>
-      <div class="toolkit-group">
-        <p class="toolkit-heading">Analysis &amp; reporting</p>
-        <p class="toolkit-items">pandas, NumPy, scikit-learn, R, SQL, Power BI</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact wrap" id="contact">
-    <p class="section-label mono">05 — Contact</p>
-    <h2 class="contact-title">Working on something that needs both clinical judgment and a working pipeline? Let's talk.</h2>
-    <div class="contact-links">
-      <a class="btn btn-primary" href="mailto:spanakan@iu.edu">spanakan@iu.edu</a>
-      <a class="btn btn-ghost" href="https://github.com/psushruthi" target="_blank" rel="noopener">GitHub ↗</a>
-      <a class="btn btn-ghost" href="https://www.linkedin.com/in/spanakanti" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <div class="quicklinks">
+      <a href="projects.html" class="quicklink">
+        <span class="quicklink-label mono">02 →</span>
+        <span class="quicklink-title">Projects</span>
+        <span class="quicklink-desc">5 pipelines, from fluorescence microscopy to HPC neuroimaging</span>
+      </a>
+      <a href="experience.html" class="quicklink">
+        <span class="quicklink-label mono">03 →</span>
+        <span class="quicklink-title">Experience</span>
+        <span class="quicklink-desc">Dentist to Research Data Analyst, and the toolkit in between</span>
+      </a>
+      <a href="contact.html" class="quicklink">
+        <span class="quicklink-label mono">04 →</span>
+        <span class="quicklink-title">Contact</span>
+        <span class="quicklink-desc">Email, GitHub, LinkedIn</span>
+      </a>
     </div>
   </section>
 
