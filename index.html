@@ -1,99 +1,527 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sushruthi Panakanti — Research Data Analyst</title>
-<meta name="description" content="Research Data Analyst at Stark Neurosciences Research Institute, IU School of Medicine. Clinical training, imaging pipelines, and research data infrastructure.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sushruthi Panakanti | Research Data Analyst</title>
+<meta name="description" content="Research Data Analyst with a clinical background. I build automated, reproducible data and imaging pipelines that research teams can run on their own.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Private visitor counts (GoatCounter). Put your code between the quotes to turn it on. -->
+<script>
+  var GOATCOUNTER_CODE = "";
+  if (GOATCOUNTER_CODE) {
+    var gc = document.createElement("script"); gc.async = true; gc.src = "https://gc.zgo.at/count.js";
+    gc.setAttribute("data-goatcounter", "https://" + GOATCOUNTER_CODE + ".goatcounter.com/count");
+    document.head.appendChild(gc);
+  }
+</script>
+<style>
+  :root {
+    --bg: #F8F7FC;
+    --card: #FFFFFF;
+    --ink: #2C3E50;
+    --ink-2: #5B6B7D;
+    --line: #E6E3F0;
+    --blush: #F7D3DC;
+    --mint: #CDEBDD;
+    --lav: #DDD7F6;
+    --butter: #FBEAB0;
+    --sky: #D3E6F8;
+    --accent: #7A5CC7;
+    --radius: 18px;
+    --max: 1160px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 "Figtree", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: "Bricolage Grotesque", "Figtree", sans-serif; letter-spacing: -0.02em; margin: 0; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  @media (max-width: 600px) { .wrap { padding: 0 16px; } }
+
+  /* nav */
+  nav { position: sticky; top: 0; z-index: 20; background: rgba(248,247,252,.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+  .logo { font: 800 20px "Bricolage Grotesque", sans-serif; color: var(--ink); text-decoration: none; letter-spacing: -0.03em; }
+  .logo span { color: var(--accent); }
+  nav ul { list-style: none; display: flex; gap: 26px; margin: 0; padding: 0; font-size: 15.5px; font-weight: 500; }
+  nav ul a { color: var(--ink-2); text-decoration: none; }
+  nav ul a:hover { color: var(--ink); }
+  @media (max-width: 760px) { nav ul li:not(:last-child) { display: none; } }
+
+  /* hero */
+  .hero { padding: 72px 0 56px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
+  @media (max-width: 920px) { .hero .wrap { grid-template-columns: 1fr; } .hero { padding-top: 40px; } }
+  .hello { display: inline-flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 14.5px; font-weight: 600; color: var(--ink-2); margin-bottom: 22px; }
+  .wave { display: inline-block; transform-origin: 70% 70%; animation: wave 2.4s ease-in-out 1s 2; }
+  @keyframes wave { 0%, 60%, 100% { transform: rotate(0); } 10%, 30% { transform: rotate(16deg); } 20%, 40% { transform: rotate(-8deg); } }
+  h1 { font-size: clamp(44px, 6.4vw, 78px); line-height: .98; font-weight: 800; }
+  .role { margin: 18px 0 0; font: 600 clamp(19px, 2.1vw, 24px)/1.3 "Bricolage Grotesque", sans-serif; color: var(--ink); }
+  .role em { font-style: normal; color: var(--accent); }
+  .intro { margin: 16px 0 0; max-width: 34em; color: var(--ink-2); font-size: 18px; }
+  .cta { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px; font-weight: 600; text-decoration: none; font-size: 15.5px; border: 1.5px solid var(--ink); color: var(--ink); background: transparent; }
+  .btn.solid { background: var(--ink); color: #fff; }
+  .btn:hover { transform: translateY(-1px); }
+  .ticker { margin-top: 30px; display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--ink-2); min-height: 26px; }
+  .ticker b { font-weight: 600; color: var(--ink); }
+  .ticker .dot { width: 9px; height: 9px; border-radius: 50%; background: #4CC38A; box-shadow: 0 0 0 4px rgba(76,195,138,.2); flex: none; }
+  .ticker span.t { transition: opacity .35s, transform .35s; }
+  .ticker span.t.out { opacity: 0; transform: translateY(6px); }
+
+  /* hero collage */
+  .collage { position: relative; aspect-ratio: 1 / .92; }
+  .tile { position: absolute; border-radius: var(--radius); overflow: hidden; box-shadow: 0 18px 40px -18px rgba(44,62,80,.35); border: 6px solid #fff; background: #fff; }
+  .tile img, .tile svg { width: 100%; height: 100%; display: block; object-fit: cover; }
+  .t1 { left: 0; top: 4%; width: 62%; aspect-ratio: 16/10; transform: rotate(-3deg); }
+  .t2 { right: 0; top: 0; width: 44%; aspect-ratio: 1; transform: rotate(4deg); }
+  .t3 { left: 12%; bottom: 0; width: 46%; aspect-ratio: 4/3; transform: rotate(2deg); }
+  .t4 { right: 4%; bottom: 6%; width: 40%; aspect-ratio: 1; transform: rotate(-4deg); }
+  .sticker { position: absolute; z-index: 3; font: 700 14px "Bricolage Grotesque", sans-serif; padding: 7px 12px; border-radius: 999px; box-shadow: 0 8px 20px -10px rgba(44,62,80,.5); }
+  .s1 { left: 52%; top: 44%; background: var(--butter); transform: rotate(-6deg); }
+  .s2 { left: -2%; bottom: 30%; background: var(--mint); transform: rotate(5deg); }
+
+  /* sections */
+  section { padding: 72px 0; }
+  .head { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }
+  h2 { font-size: clamp(30px, 3.8vw, 44px); font-weight: 800; line-height: 1.05; }
+  .head p { margin: 0; color: var(--ink-2); max-width: 30em; }
+
+  /* projects */
+  .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  @media (max-width: 820px) { .projects { grid-template-columns: 1fr; } }
+  .proj { background: var(--card); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: transform .2s, box-shadow .2s; position: relative; }
+  .proj:hover { transform: translateY(-3px); box-shadow: 0 22px 44px -26px rgba(44,62,80,.45); }
+  .proj .pic { aspect-ratio: 16 / 9.5; overflow: hidden; position: relative; }
+  .proj .pic img, .proj .pic svg { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
+  .proj .body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .proj h3 { font-size: 22px; font-weight: 700; line-height: 1.2; }
+  .proj p { margin: 0; color: var(--ink-2); font-size: 15.5px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 6px; }
+  .tags span { font-size: 12.5px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); color: var(--ink-2); }
+  .badge { position: absolute; top: 14px; left: 14px; z-index: 2; font-size: 12.5px; font-weight: 700; padding: 5px 11px; border-radius: 999px; background: #fff; color: var(--ink); box-shadow: 0 6px 16px -8px rgba(44,62,80,.5); }
+  .badge.live::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #4CC38A; margin-right: 6px; vertical-align: 1px; }
+  .proj.feature { grid-column: 1 / -1; display: grid; grid-template-columns: 1.4fr 1fr; }
+  .proj.feature .pic { aspect-ratio: auto; min-height: 320px; }
+  .proj.feature .body { justify-content: center; padding: 28px 30px; gap: 12px; }
+  .proj.feature .body .tags { margin-top: 4px; }
+  @media (max-width: 820px) { .proj.feature { grid-template-columns: 1fr; } .proj.feature .pic { min-height: 0; aspect-ratio: 16/10; } }
+  .go { font-weight: 600; color: var(--accent); font-size: 15px; }
+
+  /* peeking mouse quirk */
+  .peek { position: absolute; right: 26px; bottom: -6px; width: 64px; height: 44px; z-index: 3; transform: translateY(46px); transition: transform .4s cubic-bezier(.3,1.6,.5,1); }
+  .proj.feature:hover .peek, .peek.up { transform: translateY(0); }
+  .peek svg { width: 100%; height: 100%; display: block; filter: drop-shadow(0 4px 6px rgba(44,62,80,.25)); }
+  .peek-say { position: absolute; right: 96px; bottom: 14px; z-index: 3; background: var(--butter); font: 700 13px "Bricolage Grotesque", sans-serif; padding: 6px 11px; border-radius: 12px; opacity: 0; transform: translateY(6px); transition: opacity .25s, transform .25s; pointer-events: none; white-space: nowrap; }
+  .proj.feature:hover .peek-say, .peek-say.up { opacity: 1; transform: none; }
+  .pic-clip { overflow: hidden; }
+
+  /* path */
+  .path { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  @media (max-width: 900px) { .path { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .path { grid-template-columns: 1fr; } }
+  .step { border-radius: 20px; padding: 22px; position: relative; min-height: 190px; display: flex; flex-direction: column; gap: 8px; }
+  .step .ic { width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.7); display: grid; place-items: center; }
+  .step .ic svg { width: 24px; height: 24px; fill: none; stroke: var(--ink); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .step .yr { font-size: 13px; font-weight: 600; color: var(--ink-2); margin-top: 6px; }
+  .step h3 { font-size: 19px; font-weight: 700; }
+  .step p { margin: 0; font-size: 14.5px; color: var(--ink-2); }
+  .step.next { border: 2px dashed #C9BFEF; background: #FBFAFF; }
+  .c-blush { background: var(--blush); } .c-sky { background: var(--sky); } .c-mint { background: var(--mint); }
+
+  /* skills */
+  .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 900px) { .skills { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .skills { grid-template-columns: 1fr; } }
+  .sk { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 20px; }
+  .sk h3 { font-size: 17px; font-weight: 700; display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .sk h3 i { width: 12px; height: 12px; border-radius: 4px; display: inline-block; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
+  .chips li { font-size: 14px; padding: 5px 11px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); }
+
+  /* experience */
+  .xp { display: grid; grid-template-columns: 1.3fr 1fr; gap: 22px; }
+  @media (max-width: 900px) { .xp { grid-template-columns: 1fr; } }
+  .xp-list { list-style: none; margin: 0; padding: 0; background: var(--card); border: 1px solid var(--line); border-radius: 22px; }
+  .xp-list li { display: grid; grid-template-columns: 130px 1fr; gap: 16px; padding: 18px 22px; border-bottom: 1px solid var(--line); }
+  .xp-list li:last-child { border-bottom: 0; }
+  @media (max-width: 520px) { .xp-list li { grid-template-columns: 1fr; gap: 2px; } }
+  .xp-list .when { font-size: 13.5px; color: var(--ink-2); font-weight: 600; padding-top: 3px; }
+  .xp-list b { display: block; font-weight: 600; }
+  .xp-list span { font-size: 14.5px; color: var(--ink-2); }
+  .side { display: grid; gap: 16px; align-content: start; }
+  .box { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 20px 22px; }
+  .box h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+  .box ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; font-size: 14.5px; }
+  .box li span { display: block; color: var(--ink-2); font-size: 13.5px; }
+
+  /* off the clock quirk */
+  .offclock { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 700px) { .offclock { grid-template-columns: 1fr; } }
+  .oc { border-radius: 20px; padding: 22px; display: flex; align-items: center; gap: 16px; cursor: default; }
+  .oc .emo { width: 64px; height: 64px; flex: none; }
+  .oc h3 { font-size: 18px; font-weight: 700; }
+  .oc p { margin: 2px 0 0; font-size: 14.5px; color: var(--ink-2); }
+  .oc:hover .emo { animation: bop .6s ease-in-out; }
+  @keyframes bop { 0%,100% { transform: rotate(0) translateY(0); } 30% { transform: rotate(-8deg) translateY(-4px); } 60% { transform: rotate(6deg); } }
+
+  /* footer */
+  footer { padding: 64px 0 72px; border-top: 1px solid var(--line); background: #fff; }
+  footer .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center; }
+  @media (max-width: 820px) { footer .wrap { grid-template-columns: 1fr; } }
+  footer h2 { font-size: clamp(30px, 4vw, 46px); }
+  footer p { color: var(--ink-2); margin: 10px 0 0; }
+  .links { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 420px) { .links { grid-template-columns: 1fr; } }
+  .links a { display: flex; align-items: center; gap: 10px; padding: 13px 16px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); text-decoration: none; font-weight: 600; font-size: 15px; min-width: 0; }
+  .links a span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .links a:hover { border-color: var(--accent); }
+  .links svg { width: 22px; height: 22px; flex: none; fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .fine { font-size: 13px; color: var(--ink-2); margin-top: 26px; }
+
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
 </head>
 <body>
 
-<div class="grain" aria-hidden="true"></div>
-<a class="skip-link" href="#main">Skip to content</a>
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="logo" href="#top">Sush<span>.</span></a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#path">Path</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-<header class="site-header">
-  <div class="wrap header-row">
-    <a href="index.html" class="wordmark">Sushruthi Panakanti</a>
-    <nav class="tab-nav" aria-label="Primary">
-      <a href="index.html" class="tab is-active"><span class="tab-num mono">01</span>Home</a>
-      <a href="projects.html" class="tab"><span class="tab-num mono">02</span>Projects</a>
-      <a href="experience.html" class="tab"><span class="tab-num mono">03</span>Experience</a>
-      <a href="contact.html" class="tab"><span class="tab-num mono">04</span>Contact</a>
-    </nav>
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="hello"><span class="wave" aria-hidden="true">👋</span> Hi, I'm Sush</p>
+      <h1>Sushruthi Panakanti</h1>
+      <p class="role">Research Data Analyst. <em>Let's make research move faster.</em></p>
+      <p class="intro">A dentist turned data analyst. I build automated, reproducible data and imaging pipelines that research teams can run on their own.</p>
+      <div class="cta">
+        <a class="btn solid" href="#work">See my work</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+      <p class="ticker" aria-live="polite"><span class="dot" aria-hidden="true"></span><span class="t" id="ticker"><b>Currently:</b> building a new image analysis pipeline</span></p>
+    </div>
+
+    <div class="collage" aria-hidden="true">
+      <div class="tile t1"><img src="assets/ab-site.jpg" alt=""></div>
+      <div class="tile t2">
+        <svg viewBox="0 0 200 200"><rect width="200" height="200" fill="#1E2236"/>
+          <ellipse cx="100" cy="102" rx="70" ry="80" fill="#8A8FA8"/><ellipse cx="100" cy="102" rx="58" ry="68" fill="#C7CADB"/>
+          <path d="M100 36v132" stroke="#1E2236" stroke-width="3"/><g fill="none" stroke="#8A8FA8" stroke-width="3" stroke-linecap="round"><path d="M56 80q10-8 20 0t18 0"/><path d="M106 80q10-8 20 0t18 0"/><path d="M52 112q12-8 22 0t20 0"/><path d="M106 112q12-8 22 0t20 0"/><path d="M62 144q10-6 18 0"/><path d="M118 144q10-6 18 0"/></g>
+          <circle cx="70" cy="70" r="14" fill="#F7A6BE" opacity=".85"/><circle cx="132" cy="132" r="12" fill="#9FD9C0" opacity=".85"/><circle cx="128" cy="66" r="9" fill="#F7A6BE" opacity=".8"/>
+        </svg>
+      </div>
+      <div class="tile t3">
+        <svg viewBox="0 0 240 180"><rect width="240" height="180" fill="#FFFFFF"/>
+          <rect x="14" y="14" width="212" height="22" rx="6" fill="#EEEAF8"/>
+          <rect x="14" y="48" width="100" height="56" rx="10" fill="#DDD7F6"/><rect x="126" y="48" width="100" height="56" rx="10" fill="#CDEBDD"/>
+          <rect x="24" y="66" width="44" height="10" rx="5" fill="#7A5CC7"/><rect x="136" y="66" width="38" height="10" rx="5" fill="#3E9C74"/>
+          <g fill="#F7D3DC"><rect x="20" y="148" width="18" height="20"/><rect x="44" y="132" width="18" height="36"/><rect x="68" y="122" width="18" height="46"/><rect x="92" y="138" width="18" height="30"/></g>
+          <g fill="#7A5CC7"><rect x="20" y="158" width="18" height="10"/><rect x="44" y="150" width="18" height="18"/><rect x="68" y="144" width="18" height="24"/><rect x="92" y="152" width="18" height="16"/></g>
+          <circle cx="182" cy="140" r="26" fill="none" stroke="#FBEAB0" stroke-width="14"/><path d="M182 114a26 26 0 0 1 24 36" fill="none" stroke="#7A5CC7" stroke-width="14"/>
+        </svg>
+      </div>
+      <div class="tile t4">
+        <svg viewBox="0 0 200 200"><rect width="200" height="200" fill="#0B0F1D"/>
+          <g opacity=".95"><circle cx="60" cy="62" r="20" fill="#E14D74"/><circle cx="138" cy="60" r="16" fill="#E14D74"/><circle cx="100" cy="128" r="24" fill="#E14D74"/><circle cx="160" cy="146" r="14" fill="#E14D74"/></g>
+          <g fill="#5EE38C"><circle cx="66" cy="58" r="7"/><circle cx="104" cy="122" r="9"/><circle cx="40" cy="150" r="6"/></g>
+          <g fill="#FFE066"><circle cx="64" cy="64" r="4"/><circle cx="100" cy="128" r="5"/></g>
+          <g fill="#6E9BFF"><ellipse cx="58" cy="66" rx="6" ry="4"/><ellipse cx="140" cy="62" rx="5" ry="4"/><ellipse cx="96" cy="132" rx="7" ry="5"/><ellipse cx="158" cy="148" rx="5" ry="3"/></g>
+          <g fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="3 3" opacity=".7"><circle cx="60" cy="62" r="26"/><circle cx="100" cy="128" r="30"/></g>
+        </svg>
+      </div>
+      <span class="sticker s1">pipelines</span>
+      <span class="sticker s2">dashboards</span>
+    </div>
   </div>
 </header>
 
-<main id="main">
-
-  <section class="hero" id="top">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow mono">Research Data Analyst · Stark Neurosciences Research Institute, IU School of Medicine</p>
-        <h1 class="hero-title">
-          I make research data <em>trustworthy</em> — from the microscope to the MRI scanner to the database.
-        </h1>
-        <p class="hero-sub">
-          Most data people haven't stood chairside with a patient. Most clinicians haven't written a batch-processing pipeline. I've done both, and it changes how I build things: every pipeline I ship has to survive contact with a real dataset, a real deadline, and someone who isn't going to read the documentation.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="projects.html">See the work</a>
-          <a class="btn btn-ghost" href="contact.html">Get in touch</a>
-        </div>
+<main>
+  <section id="work">
+    <div class="wrap">
+      <div class="head">
+        <h2>Selected work</h2>
+        <p>Problems solved for research teams, built to be run by people who don't code.</p>
       </div>
+      <div class="projects">
 
-      <div class="hero-signature" aria-hidden="true">
-        <div class="channel-field" id="channelField">
-          <div class="dot dot-teal" data-dot="teal"></div>
-          <div class="dot dot-rust" data-dot="rust"></div>
-          <div class="dot dot-blue" data-dot="blue"></div>
+        <a class="proj feature" href="https://psushruthi.github.io/amyloid-beta-microglia-website/" target="_blank" rel="noopener">
+          <div class="pic">
+            <span class="badge live">Live interactive site</span>
+            <img src="assets/ab-site.jpg" alt="Screenshot of the interactive project website showing a microscope image and analysis controls">
+            <span class="peek-say" id="peek-say">Psst! I'm the tour guide in there.</span>
+            <div class="peek" id="peek" aria-hidden="true">
+              <svg viewBox="0 0 64 44"><path d="M50 26c8 0 10-8 6-13" fill="none" stroke="#FF8FB1" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="33" cy="24" rx="18" ry="11.5" fill="#fff"/><circle cx="16" cy="19" r="10" fill="#fff"/><circle cx="20" cy="8" r="7" fill="#fff"/><circle cx="20" cy="8" r="4.2" fill="#FF8FB1"/><circle cx="11.5" cy="17" r="2" fill="#1A1400"/><circle cx="5.5" cy="21" r="2.4" fill="#FF5C8A"/></svg>
+            </div>
+          </div>
+          <div class="body">
+            <h3>Automated microscopy image analysis</h3>
+            <p>A batch pipeline that measures hundreds of microscope images the same way every time, with check images, an audit trail and a guided, interactive explainer anyone can follow.</p>
+            <div class="tags"><span>Fiji / ImageJ</span><span>Python</span><span>Batch processing</span><span>Data QA</span><span>GitHub Pages</span></div>
+            <span class="go">Explore the live site</span>
+          </div>
+        </a>
+
+        <div class="proj">
+          <div class="pic">
+            <span class="badge">Pipeline</span>
+            <svg viewBox="0 0 320 190" role="img" aria-label="Illustration of 3D cell surfaces detected in a microscope image">
+              <rect width="320" height="190" fill="#DDD7F6"/>
+              <g transform="translate(26 22)">
+                <rect width="268" height="146" rx="12" fill="#0E1222"/>
+                <g opacity=".9"><path d="M40 90c10-34 52-40 66-12 12 22-10 46-34 44-22-2-38-12-32-32z" fill="#7C6BF0"/>
+                <path d="M150 52c22-14 52 0 50 24-2 26-36 34-54 18-12-12-8-34 4-42z" fill="#4CC38A"/>
+                <path d="M196 104c18-6 40 6 36 22-4 18-30 20-42 8-8-8-6-26 6-30z" fill="#F07AA0"/>
+                <circle cx="110" cy="40" r="12" fill="#F2C94C"/></g>
+                <g fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.2"><path d="M40 90c10-34 52-40 66-12"/><path d="M150 52c22-14 52 0 50 24"/></g>
+                <rect x="12" y="12" width="88" height="20" rx="6" fill="#fff" fill-opacity=".12"/><rect x="18" y="18" width="40" height="8" rx="4" fill="#fff" fill-opacity=".6"/>
+              </g>
+            </svg>
+          </div>
+          <div class="body">
+            <h3>3D microscopy pipelines in Imaris</h3>
+            <p>Modular Python on the Imaris API: region masks, colocalization and surface detection, with batch logging and pick-up-where-it-left-off runs.</p>
+            <div class="tags"><span>Python</span><span>Imaris XT</span><span>Batch automation</span><span>CSV reporting</span></div>
+          </div>
         </div>
-        <p class="signature-caption mono">move your cursor — this is roughly how I spend my Tuesdays</p>
+
+        <div class="proj">
+          <div class="pic">
+            <span class="badge">Pipeline</span>
+            <svg viewBox="0 0 320 190" role="img" aria-label="Illustration of brain MRI slices moving through processing steps">
+              <rect width="320" height="190" fill="#D3E6F8"/>
+              <g transform="translate(20 34)">
+                <g><rect width="76" height="96" rx="10" fill="#1E2236"/><ellipse cx="38" cy="48" rx="28" ry="36" fill="#9AA0B8"/><ellipse cx="38" cy="48" rx="20" ry="28" fill="#D4D7E6"/><path d="M38 14v68" stroke="#1E2236" stroke-width="2"/></g>
+                <path d="M86 48h20" stroke="#5B6B7D" stroke-width="2.5" stroke-linecap="round"/><path d="M100 42l7 6-7 6" fill="none" stroke="#5B6B7D" stroke-width="2.5" stroke-linecap="round"/>
+                <g transform="translate(116 0)"><rect width="76" height="96" rx="10" fill="#1E2236"/><ellipse cx="38" cy="48" rx="28" ry="36" fill="none" stroke="#7A5CC7" stroke-width="3"/><ellipse cx="38" cy="48" rx="20" ry="28" fill="#D4D7E6"/></g>
+                <path d="M202 48h20" stroke="#5B6B7D" stroke-width="2.5" stroke-linecap="round"/><path d="M216 42l7 6-7 6" fill="none" stroke="#5B6B7D" stroke-width="2.5" stroke-linecap="round"/>
+                <g transform="translate(232 0)"><rect width="48" height="96" rx="10" fill="#fff"/><g fill="#7A5CC7"><rect x="8" y="58" width="8" height="28" rx="2"/><rect x="20" y="40" width="8" height="46" rx="2"/><rect x="32" y="66" width="8" height="20" rx="2"/></g></g>
+              </g>
+            </svg>
+          </div>
+          <div class="body">
+            <h3>MRI processing on a computing cluster</h3>
+            <p>Implemented and extended a colleague's MRI framework for new studies: scan conversion, file renaming and QC checks, cluster job runs and visual reports.</p>
+            <div class="tags"><span>Bash</span><span>Python</span><span>FSL / ANTs</span><span>SLURM / HPC</span><span>QC automation</span></div>
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="pic">
+            <span class="badge">Dashboards</span>
+            <svg viewBox="0 0 320 190" role="img" aria-label="Illustration of a reporting dashboard with charts">
+              <rect width="320" height="190" fill="#FBEAB0"/>
+              <g transform="translate(24 20)">
+                <rect width="272" height="150" rx="12" fill="#fff"/>
+                <rect x="14" y="14" width="80" height="10" rx="5" fill="#2C3E50" opacity=".8"/>
+                <g><rect x="14" y="34" width="76" height="40" rx="8" fill="#DDD7F6"/><rect x="98" y="34" width="76" height="40" rx="8" fill="#CDEBDD"/><rect x="182" y="34" width="76" height="40" rx="8" fill="#F7D3DC"/></g>
+                <g fill="#7A5CC7"><rect x="20" y="118" width="14" height="20" rx="2"/><rect x="40" y="104" width="14" height="34" rx="2"/><rect x="60" y="96" width="14" height="42" rx="2"/><rect x="80" y="110" width="14" height="28" rx="2"/><rect x="100" y="90" width="14" height="48" rx="2"/><rect x="120" y="100" width="14" height="38" rx="2"/></g>
+                <polyline points="160,128 180,112 200,118 220,98 240,104 256,88" fill="none" stroke="#3E9C74" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
+          </div>
+          <div class="body">
+            <h3>Reporting dashboards for medical education</h3>
+            <p>Power BI dashboards and institutional reporting across 100+ graduate medical education programs.</p>
+            <div class="tags"><span>Power BI</span><span>Data modeling</span><span>Institutional reporting</span></div>
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="pic">
+            <span class="badge">Data workflow</span>
+            <svg viewBox="0 0 320 190" role="img" aria-label="Illustration of a spreadsheet driving automated file organization">
+              <rect width="320" height="190" fill="#CDEBDD"/>
+              <g transform="translate(24 26)">
+                <rect width="120" height="138" rx="10" fill="#fff"/>
+                <g fill="#E6E3F0"><rect x="10" y="12" width="100" height="12" rx="3"/></g>
+                <g fill="#F2F0F8"><rect x="10" y="32" width="100" height="10" rx="3"/><rect x="10" y="48" width="100" height="10" rx="3"/><rect x="10" y="64" width="100" height="10" rx="3"/><rect x="10" y="80" width="100" height="10" rx="3"/><rect x="10" y="96" width="100" height="10" rx="3"/></g>
+                <path d="M132 69h28" stroke="#3E9C74" stroke-width="2.5" stroke-linecap="round"/><path d="M154 63l7 6-7 6" fill="none" stroke="#3E9C74" stroke-width="2.5" stroke-linecap="round"/>
+                <g transform="translate(172 8)" fill="#fff" stroke="#3E9C74" stroke-width="1.5"><path d="M0 8h30l6 6h42v28H0z"/><path d="M0 52h30l6 6h42v28H0z"/><path d="M0 96h30l6 6h42v28H0z"/></g>
+                <g transform="translate(232 22)" fill="#3E9C74"><circle r="6"/><circle cy="44" r="6"/><circle cy="88" r="6"/></g>
+              </g>
+            </svg>
+          </div>
+          <div class="body">
+            <h3>Spreadsheet-driven study data organization</h3>
+            <p>Scripts that use the study spreadsheet as the source of truth to build folders, convert and rename scans, and audit that nothing is missing.</p>
+            <div class="tags"><span>Python</span><span>Bash</span><span>dcm2niix</span><span>Data audits</span></div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section class="about wrap" id="about">
-    <p class="section-label mono">About</p>
-    <div class="pull-wrap">
-      <p class="pull">
-        My path here wasn't a straight line: dental surgery, then a Master's in Health Informatics, then two clinical data coordinator roles before landing in a neuroscience lab building imaging pipelines for NIH-funded Alzheimer's research.
-      </p>
-    </div>
-    <p class="about-body">
-      That order matters more than it looks like it should. Clinical training taught me what a data point actually costs to collect, and what it means when it's wrong. Now I spend my days writing Python and Bash that turn hundreds of raw microscopy images or MRI scans into analysis-ready, reproducible output — and structured clinical data management (REDCap, Cerner, OnCore) that has to hold up under audit. I care less about being the most technically clever person in the room and more about whether the person who inherits my pipeline six months from now can actually run it.
-    </p>
-
-    <div class="quicklinks">
-      <a href="projects.html" class="quicklink">
-        <span class="quicklink-label mono">02 →</span>
-        <span class="quicklink-title">Projects</span>
-        <span class="quicklink-desc">5 pipelines, from fluorescence microscopy to HPC neuroimaging</span>
-      </a>
-      <a href="experience.html" class="quicklink">
-        <span class="quicklink-label mono">03 →</span>
-        <span class="quicklink-title">Experience</span>
-        <span class="quicklink-desc">Dentist to Research Data Analyst, and the toolkit in between</span>
-      </a>
-      <a href="contact.html" class="quicklink">
-        <span class="quicklink-label mono">04 →</span>
-        <span class="quicklink-title">Contact</span>
-        <span class="quicklink-desc">Email, GitHub, LinkedIn</span>
-      </a>
+  <section id="path">
+    <div class="wrap">
+      <div class="head">
+        <h2>My path</h2>
+        <p>From treating patients to building the data systems behind research.</p>
+      </div>
+      <div class="path">
+        <div class="step c-blush">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M7 3c-2.5 0-4 2-3.6 4.6.4 2.6 1.4 4.2 1.8 7.4.4 3 1 6 2.6 6 1.4 0 1.6-2.6 2.2-4.6.4-1.4 1.6-1.4 2 0 .6 2 .8 4.6 2.2 4.6 1.6 0 2.2-3 2.6-6 .4-3.2 1.4-4.8 1.8-7.4C21 5 19.5 3 17 3c-2 0-3 1.2-5 1.2S9 3 7 3z"/></svg></div>
+          <span class="yr">2017 to 2023</span>
+          <h3>Dentist</h3>
+          <p>BDS and clinical practice. Learned what data means to the people behind it.</p>
+        </div>
+        <div class="step c-sky">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg></div>
+          <span class="yr">2023 to 2025</span>
+          <h3>Health informatics</h3>
+          <p>MS at Indiana University, plus clinical research data coordination.</p>
+        </div>
+        <div class="step c-mint">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 19h16"/><path d="M7 16V9M12 16V5M17 16v-4"/></svg></div>
+          <span class="yr">2024 to now</span>
+          <h3>Research data analyst</h3>
+          <p>Automated imaging and data pipelines for NIH-funded research.</p>
+        </div>
+        <div class="step next">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg></div>
+          <span class="yr">Next</span>
+          <h3>Oncology research data</h3>
+          <p>Volunteering at tissue bank biopsy collection events made it personal. I want to help make cancer research data faster and more reliable.</p>
+        </div>
+      </div>
     </div>
   </section>
 
+  <section id="skills">
+    <div class="wrap">
+      <div class="head">
+        <h2>What I work with</h2>
+      </div>
+      <div class="skills">
+        <div class="sk"><h3><i style="background:#DDD7F6"></i>Pipelines and automation</h3><ul class="chips"><li>Python</li><li>Bash</li><li>Fiji / ImageJ</li><li>Imaris XT</li><li>Batch processing</li></ul></div>
+        <div class="sk"><h3><i style="background:#D3E6F8"></i>Medical imaging</h3><ul class="chips"><li>DICOM</li><li>NIfTI</li><li>FSL</li><li>ANTs</li><li>ITK-SNAP</li><li>SLURM / HPC</li></ul></div>
+        <div class="sk"><h3><i style="background:#F7D3DC"></i>Clinical research data</h3><ul class="chips"><li>REDCap</li><li>Cerner</li><li>OnCore</li><li>Source data verification</li><li>GCP</li></ul></div>
+        <div class="sk"><h3><i style="background:#CDEBDD"></i>Analytics and visualization</h3><ul class="chips"><li>pandas</li><li>NumPy</li><li>R</li><li>SQL</li><li>Power BI</li></ul></div>
+        <div class="sk"><h3><i style="background:#FBEAB0"></i>Quality and reproducibility</h3><ul class="chips"><li>Validation checks</li><li>Audit trails</li><li>Documentation</li><li>Git / GitHub</li></ul></div>
+        <div class="sk"><h3><i style="background:#E6E3F0"></i>Health informatics training</h3><ul class="chips"><li>EHR systems</li><li>HIPAA</li><li>ICD-10</li><li>SNOMED CT</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="head"><h2>Experience</h2></div>
+      <div class="xp">
+        <ul class="xp-list">
+          <li><span class="when">2025 to now</span><div><b>Research Data Analyst and Data Manager</b><span>Oblak Lab, Stark Neurosciences Research Institute, IU School of Medicine</span></div></li>
+          <li><span class="when">2024 to 2025</span><div><b>Research Data Analyst Intern</b><span>Stark Neurosciences Research Institute, IU School of Medicine</span></div></li>
+          <li><span class="when">2024 to 2025</span><div><b>Communications Coordinator</b><span>Graduate Medical Education, IU School of Medicine. Nominated for Student Employee of the Year</span></div></li>
+          <li><span class="when">2023 to 2025</span><div><b>Graduate Research Assistant</b><span>Luddy School of Informatics, Indiana University</span></div></li>
+          <li><span class="when">2023 to 2024</span><div><b>Clinical Data Coordinator</b><span>Gastroenterology and Hepatology, IU School of Medicine</span></div></li>
+          <li><span class="when">2021 to 2023</span><div><b>General Dentist</b><span>Clinical practice, Hyderabad</span></div></li>
+        </ul>
+        <div class="side">
+          <div class="box"><h3>Education</h3><ul>
+            <li>MS, Health Informatics<span>Indiana University Indianapolis, 2025</span></li>
+            <li>Bachelor of Dental Surgery<span>KLE University, 2022</span></li>
+          </ul></div>
+          <div class="box"><h3>Certifications</h3><ul>
+            <li>HIPAA Privacy and Security for Research<span>Indiana University</span></li>
+            <li>Good Clinical Practice<span>CITI Program</span></li>
+            <li>Biomedical Research<span>CITI Program</span></li>
+          </ul></div>
+          <div class="box"><h3>Publication</h3><ul>
+            <li>Myths and misconceptions about oral health practices among adult slum dwellers of South India<span>J Indian Assoc Public Health Dent, 2025. <a href="https://doi.org/10.4103/jiaphd.jiaphd_202_23" target="_blank" rel="noopener">DOI</a></span></li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="offclock" style="padding-top: 24px">
+    <div class="wrap">
+      <div class="head"><h2>Off the clock</h2></div>
+      <div class="offclock">
+        <div class="oc c-blush">
+          <svg class="emo" viewBox="0 0 64 64" aria-hidden="true"><circle cx="34" cy="12" r="6" fill="#2C3E50"/><path d="M34 18l-4 18 8 10 4 14M30 36l-8 10-6 2M32 24l12-6 6-10M32 24l-12 2-6-6" fill="none" stroke="#2C3E50" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 52q4-4 8 0" fill="none" stroke="#E14D74" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <div><h3>Dancing</h3><p>My favorite way to switch off.</p></div>
+        </div>
+        <div class="oc c-butter" style="background: var(--butter)">
+          <svg class="emo" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 34h44v4c0 10-9 16-22 16S10 48 10 38z" fill="#fff" stroke="#2C3E50" stroke-width="3"/><path d="M6 34h52" stroke="#2C3E50" stroke-width="3" stroke-linecap="round"/><path d="M24 26c-3-4 3-6 0-10M32 26c-3-4 3-6 0-10M40 26c-3-4 3-6 0-10" fill="none" stroke="#E14D74" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <div><h3>Cooking</h3><p>A new cuisine every chance I get.</p></div>
+        </div>
+        <div class="oc c-lav" style="background: var(--lav)">
+          <svg class="emo" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="16" width="48" height="32" rx="6" fill="#fff" stroke="#2C3E50" stroke-width="3"/><path d="M24 54h16M28 8l4 8 4-8" fill="none" stroke="#2C3E50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 30q2 4 6 0M36 30q2 4 6 0M26 38q6 5 12 0" fill="none" stroke="#7A5CC7" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <div><h3>Sitcoms</h3><p>The same episodes, again, happily.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer class="site-footer">
+<footer id="contact">
   <div class="wrap">
-    <p class="mono">Sushruthi Panakanti — built by hand, not by template.</p>
+    <div>
+      <h2>Let's work together.</h2>
+      <p>Open to clinical research data roles. Based in Indianapolis, IN.</p>
+    </div>
+    <div>
+      <div class="links">
+        <a href="mailto:spanakan@iu.edu"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg><span>spanakan@iu.edu</span></a>
+        <a href="https://www.linkedin.com/in/spanakanti/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10.5V17M8 7.5v.01M12 17v-6.5M12 13.2c0-1.6 1.1-2.7 2.5-2.7S17 11.4 17 13v4"/></svg><span>LinkedIn</span></a>
+        <a href="https://github.com/psushruthi" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 7.5 4 12l4.5 4.5M15.5 7.5 20 12l-4.5 4.5M13.5 5l-3 14"/></svg><span>GitHub</span></a>
+        <a href="https://psushruthi.github.io/amyloid-beta-microglia-website/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span>Project site</span></a>
+      </div>
+      <p class="fine">Sushruthi Panakanti, BDS, MSHI</p>
+    </div>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+(function () {
+  // quirk 1: "currently" ticker
+  var lines = [
+    "<b>Currently:</b> building a new image analysis pipeline",
+    "<b>Off the clock:</b> cooking a cuisine I haven't tried yet",
+    "<b>Also:</b> probably dancing in the kitchen",
+    "<b>Rewatching:</b> a sitcom for the fifth time",
+    "<b>Fun fact:</b> I try a little of everything, and it usually sticks"
+  ];
+  var el = document.getElementById("ticker"), i = 0, paused = false;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  el.parentNode.addEventListener("mouseenter", function () { paused = true; });
+  el.parentNode.addEventListener("mouseleave", function () { paused = false; });
+  if (!reduce) setInterval(function () {
+    if (paused) return;
+    el.classList.add("out");
+    setTimeout(function () { i = (i + 1) % lines.length; el.innerHTML = lines[i]; el.classList.remove("out"); }, 350);
+  }, 3200);
+
+  // quirk 2: the mouse peeks out of the featured project when it scrolls into view
+  var peek = document.getElementById("peek"), say = document.getElementById("peek-say");
+  if ("IntersectionObserver" in window && !reduce) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) {
+          setTimeout(function () { peek.classList.add("up"); say.classList.add("up"); }, 500);
+          setTimeout(function () { peek.classList.remove("up"); say.classList.remove("up"); }, 3600);
+          io.disconnect();
+        }
+      });
+    }, { threshold: .6 });
+    io.observe(document.querySelector(".proj.feature"));
+  }
+})();
+</script>
 </body>
 </html>
