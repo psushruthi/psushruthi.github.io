@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sushruthi Panakanti | Research Data Analyst</title>
-<meta name="description" content="Research Data Analyst with a clinical background. I build automated, reproducible data and imaging pipelines that research teams can run on their own.">
+<meta name="description" content="Research Data Analyst with a clinical background. I turn complex research data into results that are consistent, reproducible and easy to trust.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
@@ -160,6 +160,30 @@
   .box ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; font-size: 14.5px; }
   .box li span { display: block; color: var(--ink-2); font-size: 13.5px; }
 
+  /* education */
+  .edu { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 720px) { .edu { grid-template-columns: 1fr; } }
+  .deg { border-radius: 22px; padding: 26px 26px 24px; display: flex; flex-direction: column; gap: 6px; }
+  .deg .lvl { align-self: flex-start; background: #fff; color: var(--ink); font: 700 14px "Bricolage Grotesque", sans-serif; padding: 6px 14px; border-radius: 999px; margin-bottom: 8px; box-shadow: 0 4px 12px -6px rgba(44,62,80,.35); }
+  .deg h3 { font-size: 23px; font-weight: 700; line-height: 1.2; }
+  .deg .sch { margin: 0; font-size: 16px; color: var(--ink); }
+  .deg .yrs { margin: 0; font-size: 14.5px; color: var(--ink-2); font-weight: 600; }
+  .creds { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 720px) { .creds { grid-template-columns: 1fr; } }
+  #experience .xp-list li { grid-template-columns: 190px 1fr; }
+  #experience .xp-list b { display: inline; margin-right: 8px; }
+  .pt { display: inline-block; font-style: normal; font-size: 12.5px; font-weight: 600; color: #6A4FB8; background: var(--lav); padding: 2px 10px; border-radius: 999px; vertical-align: 2px; }
+  #experience .xp-list div > span { display: block; margin-top: 2px; }
+  @media (max-width: 520px) { #experience .xp-list li { grid-template-columns: 1fr; } }
+  #education, #credentials { padding-top: 24px; }
+  /* skills: next card */
+  .sk-next { grid-column: 1 / -1; display: flex; gap: 18px; align-items: flex-start; background: linear-gradient(120deg, #FBFAFF, #F3EEFF); border: 2px dashed #C9BFEF; }
+  .sk-next h3 { font-size: 19px; margin-bottom: 6px; }
+  .sk-next p { margin: 0 0 12px; color: var(--ink-2); font-size: 15.5px; max-width: 46em; }
+  .next-ic { width: 46px; height: 46px; border-radius: 14px; background: var(--lav); display: grid; place-items: center; flex: none; }
+  .next-ic svg { width: 24px; height: 24px; fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linejoin: round; }
+  @media (max-width: 560px) { .sk-next { flex-direction: column; } }
+
   /* off the clock quirk */
   .offclock { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   @media (max-width: 700px) { .offclock { grid-template-columns: 1fr; } }
@@ -197,6 +221,7 @@
       <li><a href="#path">Path</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -208,7 +233,7 @@
       <p class="hello"><span class="wave" aria-hidden="true">👋</span> Hi, I'm Sush</p>
       <h1>Sushruthi Panakanti</h1>
       <p class="role">Research Data Analyst. <em>Let's make research move faster.</em></p>
-      <p class="intro">A dentist turned data analyst. I build automated, reproducible data and imaging pipelines that research teams can run on their own.</p>
+      <p class="intro">A dentist turned research data analyst. I turn complex research data into results teams can trust: organized, consistent and reproducible.</p>
       <div class="cta">
         <a class="btn solid" href="#work">See my work</a>
         <a class="btn" href="#contact">Get in touch</a>
@@ -254,8 +279,8 @@
   <section id="work">
     <div class="wrap">
       <div class="head">
-        <h2>Selected work</h2>
-        <p>Problems solved for research teams, built to be run by people who don't code.</p>
+        <h2>Recent work</h2>
+        <p>Automating research workflows so results are easy to get, consistent, reproducible and trustworthy.</p>
       </div>
       <div class="projects">
 
@@ -371,7 +396,7 @@
     <div class="wrap">
       <div class="head">
         <h2>My path</h2>
-        <p>From treating patients to building the data systems behind research.</p>
+        <p>From treating patients to making research data clear, consistent and trustworthy.</p>
       </div>
       <div class="path">
         <div class="step c-blush">
@@ -390,7 +415,7 @@
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 19h16"/><path d="M7 16V9M12 16V5M17 16v-4"/></svg></div>
           <span class="yr">2024 to now</span>
           <h3>Research data analyst</h3>
-          <p>Automated imaging and data pipelines for NIH-funded research.</p>
+          <p>Managing, automating and checking research data for NIH-funded studies.</p>
         </div>
         <div class="step next">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg></div>
@@ -414,6 +439,14 @@
         <div class="sk"><h3><i style="background:#CDEBDD"></i>Analytics and visualization</h3><ul class="chips"><li>pandas</li><li>NumPy</li><li>R</li><li>SQL</li><li>Power BI</li></ul></div>
         <div class="sk"><h3><i style="background:#FBEAB0"></i>Quality and reproducibility</h3><ul class="chips"><li>Validation checks</li><li>Audit trails</li><li>Documentation</li><li>Git / GitHub</li></ul></div>
         <div class="sk"><h3><i style="background:#E6E3F0"></i>Health informatics training</h3><ul class="chips"><li>EHR systems</li><li>HIPAA</li><li>ICD-10</li><li>SNOMED CT</li></ul></div>
+        <div class="sk sk-next">
+          <div class="next-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg></div>
+          <div>
+            <h3>What I want to work with next: oncology research data</h3>
+            <p>Bringing the same care for clean, reliable data to cancer research, so teams can trust their results and move faster for patients.</p>
+            <ul class="chips"><li>Clinical trial data</li><li>Oncology research teams</li><li>Data standards</li><li>Reporting that supports decisions</li></ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -421,29 +454,49 @@
   <section id="experience">
     <div class="wrap">
       <div class="head"><h2>Experience</h2></div>
-      <div class="xp">
-        <ul class="xp-list">
-          <li><span class="when">2025 to now</span><div><b>Research Data Analyst and Data Manager</b><span>Oblak Lab, Stark Neurosciences Research Institute, IU School of Medicine</span></div></li>
-          <li><span class="when">2024 to 2025</span><div><b>Research Data Analyst Intern</b><span>Stark Neurosciences Research Institute, IU School of Medicine</span></div></li>
-          <li><span class="when">2024 to 2025</span><div><b>Communications Coordinator</b><span>Graduate Medical Education, IU School of Medicine. Nominated for Student Employee of the Year</span></div></li>
-          <li><span class="when">2023 to 2025</span><div><b>Graduate Research Assistant</b><span>Luddy School of Informatics, Indiana University</span></div></li>
-          <li><span class="when">2023 to 2024</span><div><b>Clinical Data Coordinator</b><span>Gastroenterology and Hepatology, IU School of Medicine</span></div></li>
-          <li><span class="when">2021 to 2023</span><div><b>General Dentist</b><span>Clinical practice, Hyderabad</span></div></li>
-        </ul>
-        <div class="side">
-          <div class="box"><h3>Education</h3><ul>
-            <li>MS, Health Informatics<span>Indiana University Indianapolis, 2025</span></li>
-            <li>Bachelor of Dental Surgery<span>KLE University, 2022</span></li>
-          </ul></div>
-          <div class="box"><h3>Certifications</h3><ul>
-            <li>HIPAA Privacy and Security for Research<span>Indiana University</span></li>
-            <li>Good Clinical Practice<span>CITI Program</span></li>
-            <li>Biomedical Research<span>CITI Program</span></li>
-          </ul></div>
-          <div class="box"><h3>Publication</h3><ul>
-            <li>Myths and misconceptions about oral health practices among adult slum dwellers of South India<span>J Indian Assoc Public Health Dent, 2025. <a href="https://doi.org/10.4103/jiaphd.jiaphd_202_23" target="_blank" rel="noopener">DOI</a></span></li>
-          </ul></div>
+      <ul class="xp-list">
+        <li><span class="when">Jun 2025 to present</span><div><b>Research Data Analyst</b><span>Stark Neurosciences Research Institute, IU School of Medicine</span></div></li>
+        <li><span class="when">Sep 2024 to May 2025</span><div><b>Research Data Analyst Intern</b><em class="pt">Part-time, during my master's</em><span>Stark Neurosciences Research Institute, IU School of Medicine</span></div></li>
+        <li><span class="when">Aug 2024 to May 2025</span><div><b>Communications Coordinator</b><em class="pt">Part-time, during my master's</em><span>Graduate Medical Education, IU School of Medicine. Nominated for Student Employee of the Year</span></div></li>
+        <li><span class="when">Aug 2023 to May 2025</span><div><b>Graduate Research Assistant</b><em class="pt">Part-time, during my master's</em><span>Luddy School of Informatics, Computing, and Engineering, Indiana University Indianapolis</span></div></li>
+        <li><span class="when">Dec 2023 to Mar 2024</span><div><b>Clinical Data Coordinator</b><em class="pt">Part-time, during my master's</em><span>Gastroenterology and Hepatology, IU School of Medicine</span></div></li>
+        <li><span class="when">Dec 2021 to May 2023</span><div><b>General Dentist</b><span>Clinical practice, Hyderabad, India</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <div class="head"><h2>Education</h2></div>
+      <div class="edu">
+        <div class="deg c-sky">
+          <span class="lvl">Master's degree</span>
+          <h3>Master of Science in Health Informatics</h3>
+          <p class="sch">Indiana University Indianapolis, Luddy School of Informatics, Computing, and Engineering, Indianapolis</p>
+          <p class="yrs">Aug 2023 to May 2025</p>
         </div>
+        <div class="deg c-blush">
+          <span class="lvl">Bachelor's degree</span>
+          <h3>Bachelor of Dental Surgery (BDS)</h3>
+          <p class="sch">KLE University, Belagavi, India</p>
+          <p class="yrs">Sep 2017 to Dec 2022</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="credentials">
+    <div class="wrap">
+      <div class="head"><h2>Certifications and publication</h2></div>
+      <div class="creds">
+        <div class="box"><h3>Certifications</h3><ul>
+          <li>HIPAA Privacy and Security for Research<span>Indiana University</span></li>
+          <li>Good Clinical Practice<span>CITI Program</span></li>
+          <li>Biomedical Research<span>CITI Program</span></li>
+        </ul></div>
+        <div class="box"><h3>Publication</h3><ul>
+          <li>Myths and misconceptions about oral health practices among adult slum dwellers of South India<span>J Indian Assoc Public Health Dent, 2025. <a href="https://doi.org/10.4103/jiaphd.jiaphd_202_23" target="_blank" rel="noopener">DOI</a></span></li>
+        </ul></div>
       </div>
     </div>
   </section>
