@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sushruthi Panakanti | Research Data Analyst</title>
-<meta name="description" content="Research Data Analyst with a clinical background. I turn complex research data into results that are consistent, reproducible and easy to trust.">
+<meta name="description" content="Sushruthi Panakanti, Research Data Analyst. A clinician who got curious about the data behind the care, and now builds the systems that take research data from raw and messy to results teams can trust.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
@@ -46,8 +46,8 @@
   /* nav */
   nav { position: sticky; top: 0; z-index: 20; background: rgba(248,247,252,.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
   nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
-  .logo { font: 800 20px "Bricolage Grotesque", sans-serif; color: var(--ink); text-decoration: none; letter-spacing: -0.03em; }
-  .logo span { color: var(--accent); }
+  .logo { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--lav), var(--blush)); color: var(--ink); font: 800 15px "Bricolage Grotesque", sans-serif; letter-spacing: .02em; text-decoration: none; box-shadow: 0 4px 12px -6px rgba(44,62,80,.4); transition: transform .2s; }
+  .logo:hover { transform: rotate(-8deg) scale(1.05); }
   nav ul { list-style: none; display: flex; gap: 26px; margin: 0; padding: 0; font-size: 15.5px; font-weight: 500; }
   nav ul a { color: var(--ink-2); text-decoration: none; }
   nav ul a:hover { color: var(--ink); }
@@ -63,6 +63,9 @@
   h1 { font-size: clamp(44px, 6.4vw, 78px); line-height: .98; font-weight: 800; }
   .role { margin: 18px 0 0; font: 600 clamp(19px, 2.1vw, 24px)/1.3 "Bricolage Grotesque", sans-serif; color: var(--ink); }
   .role em { font-style: normal; color: var(--accent); }
+  .role .sep { color: var(--ink-2); margin: 0 4px; }
+  .hero h1 .wave { font-size: .8em; vertical-align: .05em; }
+  @media (max-width: 520px) { .role .sep { display: none; } .role em { display: block; } }
   .intro { margin: 16px 0 0; max-width: 34em; color: var(--ink-2); font-size: 18px; }
   .cta { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
   .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px; font-weight: 600; text-decoration: none; font-size: 15.5px; border: 1.5px solid var(--ink); color: var(--ink); background: transparent; }
@@ -144,38 +147,55 @@
   .chips { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
   .chips li { font-size: 14px; padding: 5px 11px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); }
 
-  /* experience */
-  .xp { display: grid; grid-template-columns: 1.3fr 1fr; gap: 22px; }
-  @media (max-width: 900px) { .xp { grid-template-columns: 1fr; } }
-  .xp-list { list-style: none; margin: 0; padding: 0; background: var(--card); border: 1px solid var(--line); border-radius: 22px; }
-  .xp-list li { display: grid; grid-template-columns: 130px 1fr; gap: 16px; padding: 18px 22px; border-bottom: 1px solid var(--line); }
-  .xp-list li:last-child { border-bottom: 0; }
-  @media (max-width: 520px) { .xp-list li { grid-template-columns: 1fr; gap: 2px; } }
-  .xp-list .when { font-size: 13.5px; color: var(--ink-2); font-weight: 600; padding-top: 3px; }
-  .xp-list b { display: block; font-weight: 600; }
-  .xp-list span { font-size: 14.5px; color: var(--ink-2); }
-  .side { display: grid; gap: 16px; align-content: start; }
+  /* certifications and publication boxes */
   .box { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 20px 22px; }
   .box h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
   .box ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; font-size: 14.5px; }
   .box li span { display: block; color: var(--ink-2); font-size: 13.5px; }
-
-  /* education */
-  .edu { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-  @media (max-width: 720px) { .edu { grid-template-columns: 1fr; } }
-  .deg { border-radius: 22px; padding: 26px 26px 24px; display: flex; flex-direction: column; gap: 6px; }
-  .deg .lvl { align-self: flex-start; background: #fff; color: var(--ink); font: 700 14px "Bricolage Grotesque", sans-serif; padding: 6px 14px; border-radius: 999px; margin-bottom: 8px; box-shadow: 0 4px 12px -6px rgba(44,62,80,.35); }
-  .deg h3 { font-size: 23px; font-weight: 700; line-height: 1.2; }
-  .deg .sch { margin: 0; font-size: 16px; color: var(--ink); }
-  .deg .yrs { margin: 0; font-size: 14.5px; color: var(--ink-2); font-weight: 600; }
   .creds { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
   @media (max-width: 720px) { .creds { grid-template-columns: 1fr; } }
-  #experience .xp-list li { grid-template-columns: 190px 1fr; }
-  #experience .xp-list b { display: inline; margin-right: 8px; }
-  .pt { display: inline-block; font-style: normal; font-size: 12.5px; font-weight: 600; color: #6A4FB8; background: var(--lav); padding: 2px 10px; border-radius: 999px; vertical-align: 2px; }
-  #experience .xp-list div > span { display: block; margin-top: 2px; }
-  @media (max-width: 520px) { #experience .xp-list li { grid-template-columns: 1fr; } }
-  #education, #credentials { padding-top: 24px; }
+  #credentials { padding-top: 24px; }
+
+  /* experience and education: three chapters on one line, details underneath */
+  .story { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 30px 40px 32px; }
+  .st-line { position: relative; height: 128px; }
+  .st-axis { position: absolute; left: 0; right: 0; top: 64px; border-top: 3px dotted #C4BBE3; }
+  .st-yr { position: absolute; top: 64px; transform: translate(-50%, -50%); background: var(--card); border: 1.5px solid #DCD5EF; color: var(--ink-2); font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 999px; z-index: 2; }
+  .st-yr.now { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 0 0 5px rgba(122,92,199,.15); }
+  .st-block { position: absolute; top: 8px; height: 38px; border-radius: 12px; display: flex; align-items: center; padding: 0 14px; font: 700 14px "Bricolage Grotesque", sans-serif; color: var(--ink); overflow: hidden; white-space: nowrap; }
+  .st-block.c1 { background: var(--blush); }
+  .st-block.c2 { background: var(--sky); margin-left: 6px; }
+  .st-block.c3 { top: 82px; background: var(--lav); color: #3F2E7A; }
+  .st-cols { display: grid; grid-template-columns: 25% 37.5% 37.5%; margin-top: 30px; }
+  .st-col { border-top: 5px solid; padding: 14px 22px 0 0; }
+  .st-col + .st-col { margin-left: 6px; }
+  .st-col.c1 { border-color: var(--blush); } .st-col.c2 { border-color: var(--sky); } .st-col.c3 { border-color: var(--lav); }
+  .st-col h3 { font: 700 18px "Bricolage Grotesque", sans-serif; margin: 0 0 12px; }
+  .st-col h3 span { display: block; font: 600 13px "Figtree", sans-serif; color: var(--ink-2); margin-top: 2px; }
+  .st-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .st-col li { font-size: 13.5px; color: var(--ink-2); line-height: 1.4; }
+  .st-col li b { display: block; color: var(--ink); font-weight: 600; font-size: 14.5px; }
+  .st-col li em { display: block; font-style: normal; font-size: 12.5px; color: var(--ink-2); opacity: .85; }
+  .st-while { margin: 16px 0 8px; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+  .st-mini { gap: 9px !important; }
+  .st-mini li { color: var(--ink); }
+  .st-note { display: block; margin-top: 3px; font-size: 12.5px; font-weight: 600; color: #6A55B5; }
+  .st-award { display: inline-block; margin-top: 4px; font-size: 12px; font-weight: 600; color: var(--ink); background: var(--butter); padding: 2px 10px; border-radius: 999px; }
+  .st-steps { list-style: none; margin: 18px 0 0; padding: 0; display: flex; align-items: flex-start; gap: 26px; flex-wrap: wrap; }
+  .st-steps li { text-align: center; position: relative; }
+  .st-steps li + li::before { content: "\2192"; position: absolute; left: -13px; top: 3px; transform: translateX(-50%); color: #A99CD6; font-weight: 700; }
+  .st-steps b { display: inline-block; font-size: 13px; font-weight: 700; padding: 4px 13px; border-radius: 999px; background: var(--lav); color: #3F2E7A; }
+  .st-steps li.up b { background: var(--butter); color: var(--ink); }
+  .st-steps li.ft b { background: var(--accent); color: #fff; }
+  .st-steps em { margin-top: 6px; }
+  @media (max-width: 760px) {
+    .story { padding: 22px 26px 24px 22px; }
+    .st-block { font-size: 12.5px; padding: 0 9px; }
+    .st-long { display: none; }
+    .st-cols { grid-template-columns: 1fr; gap: 26px; margin-top: 24px; }
+    .st-col, .st-col + .st-col { padding: 14px 0 0; margin-left: 0; }
+  }
+
   /* skills: next card */
   .sk-next { grid-column: 1 / -1; display: flex; gap: 18px; align-items: flex-start; background: linear-gradient(120deg, #FBFAFF, #F3EEFF); border: 2px dashed #C9BFEF; }
   .sk-next h3 { font-size: 19px; margin-bottom: 6px; }
@@ -215,13 +235,12 @@
 
 <nav aria-label="Main">
   <div class="wrap">
-    <a class="logo" href="#top">Sush<span>.</span></a>
+    <a class="logo" href="#top" aria-label="Back to top">SP</a>
     <ul>
       <li><a href="#work">Work</a></li>
       <li><a href="#path">Path</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -230,10 +249,9 @@
 <header class="hero" id="top">
   <div class="wrap">
     <div>
-      <p class="hello"><span class="wave" aria-hidden="true">👋</span> Hi, I'm Sush</p>
-      <h1>Sushruthi Panakanti</h1>
-      <p class="role">Research Data Analyst. <em>Let's make research move faster.</em></p>
-      <p class="intro">A dentist turned research data analyst. I turn complex research data into results teams can trust: organized, consistent and reproducible.</p>
+      <h1>Hi, I'm Sush <span class="wave" aria-hidden="true">👋</span></h1>
+      <p class="role">Sushruthi Panakanti <span class="sep" aria-hidden="true">&middot;</span> <em>Research Data Analyst</em></p>
+      <p class="intro">A clinician who got curious about the data behind the care, and now builds the systems that take research data from raw and messy to results teams can trust.</p>
       <div class="cta">
         <a class="btn solid" href="#work">See my work</a>
         <a class="btn" href="#contact">Get in touch</a>
@@ -453,33 +471,55 @@
 
   <section id="experience">
     <div class="wrap">
-      <div class="head"><h2>Experience</h2></div>
-      <ul class="xp-list">
-        <li><span class="when">Jun 2025 to present</span><div><b>Research Data Analyst</b><span>Stark Neurosciences Research Institute, IU School of Medicine</span></div></li>
-        <li><span class="when">Sep 2024 to May 2025</span><div><b>Research Data Analyst Intern</b><em class="pt">Part-time</em><span>Stark Neurosciences Research Institute, IU School of Medicine</span></div></li>
-        <li><span class="when">Aug 2024 to May 2025</span><div><b>Communications Coordinator</b><em class="pt">Part-time</em><span>Graduate Medical Education, IU School of Medicine. Nominated for Student Employee of the Year</span></div></li>
-        <li><span class="when">Aug 2023 to May 2025</span><div><b>Graduate Research Assistant</b><em class="pt">Part-time</em><span>Luddy School of Informatics, Computing, and Engineering, Indiana University Indianapolis</span></div></li>
-        <li><span class="when">Dec 2023 to Mar 2024</span><div><b>Clinical Data Coordinator</b><em class="pt">Part-time</em><span>Gastroenterology and Hepatology, IU School of Medicine</span></div></li>
-        <li><span class="when">Dec 2021 to May 2023</span><div><b>General Dentist</b><span>Clinical practice, Hyderabad, India</span></div></li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="education">
-    <div class="wrap">
-      <div class="head"><h2>Education</h2></div>
-      <div class="edu">
-        <div class="deg c-sky">
-          <span class="lvl">Master's degree</span>
-          <h3>Master of Science in Health Informatics</h3>
-          <p class="sch">Indiana University Indianapolis, Luddy School of Informatics, Computing, and Engineering, Indianapolis</p>
-          <p class="yrs">Aug 2023 to May 2025</p>
+      <div class="head">
+        <h2>Experience and education</h2>
+      </div>
+      <div class="story">
+        <!-- the line. The columns below use the same widths: Bachelor's 25%, Master's 37.5%, Research Data Analyst 37.5% -->
+        <div class="st-line" role="img" aria-label="Timeline: Bachelor's 2017 to 2023, Master's 2023 to 2025, Research Data Analyst from 2024 to now">
+          <div class="st-block c1" style="left:0%; width:25%">Bachelor's</div>
+          <div class="st-block c2" style="left:25%; width:55%">Master's</div>
+          <div class="st-axis"></div>
+          <span class="st-yr" style="left:0%">2017</span>
+          <span class="st-yr" style="left:25%">2023</span>
+          <span class="st-yr" style="left:50%">2024</span>
+          <span class="st-yr" style="left:75%">2025</span>
+          <span class="st-yr now" style="left:100%">Now</span>
+          <div class="st-block c3" style="left:62.5%; width:37.5%"><span class="st-long">Research&nbsp;</span>Data Analyst</div>
         </div>
-        <div class="deg c-blush">
-          <span class="lvl">Bachelor's degree</span>
-          <h3>Bachelor of Dental Surgery (BDS)</h3>
-          <p class="sch">KLE University, Belagavi, India</p>
-          <p class="yrs">Sep 2017 to Dec 2022</p>
+
+        <!-- the details: one column per chapter, each starting where its block starts -->
+        <div class="st-cols">
+          <div class="st-col c1">
+            <h3>Bachelor's <span>2017 - 2023</span></h3>
+            <ul>
+              <li><b>Bachelor of Dental Surgery</b>KLE University, Belagavi, India<em>Sep 2017 - Dec 2022</em></li>
+              <li><b>General Dentist</b>Clinical practice, Hyderabad, India<em>Dec 2021 - May 2023</em><span class="st-note">Intern &rarr; Full-time</span></li>
+            </ul>
+          </div>
+          <div class="st-col c2">
+            <h3>Master's <span>2023 - 2025</span></h3>
+            <ul>
+              <li><b>MS, Health Informatics</b>Indiana University Indianapolis<em>Aug 2023 - May 2025</em></li>
+            </ul>
+            <p class="st-while">While studying (part-time)</p>
+            <ul class="st-mini">
+              <li>Clinical Data Coordinator, IU School of Medicine<em>Dec 2023 - Mar 2024</em></li>
+              <li>Communications Coordinator, IU School of Medicine<em>Aug 2024 - May 2025</em><span class="st-award">&#9733; Nominated for Student Employee of the Year</span></li>
+              <li>Graduate Research Assistant<em>Aug 2023 - May 2025</em></li>
+            </ul>
+          </div>
+          <div class="st-col c3">
+            <h3>Research Data Analyst <span>2024 - now</span></h3>
+            <ul>
+              <li><b>Stark Neurosciences Research Institute</b>IU School of Medicine</li>
+            </ul>
+            <ol class="st-steps">
+              <li><b>Intern</b><em>Sep 2024</em></li>
+              <li class="up"><b>Promoted</b><em>Jun 2025</em></li>
+              <li class="ft"><b>Full-time</b><em>Since Jun 2025</em></li>
+            </ol>
+          </div>
         </div>
       </div>
     </div>
