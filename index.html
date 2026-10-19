@@ -51,7 +51,7 @@
   nav ul { list-style: none; display: flex; gap: 26px; margin: 0; padding: 0; font-size: 15.5px; font-weight: 500; }
   nav ul a { color: var(--ink-2); text-decoration: none; }
   nav ul a:hover { color: var(--ink); }
-  @media (max-width: 760px) { nav ul li:not(:last-child) { display: none; } }
+  @media (max-width: 760px) { nav ul { gap: 18px; } nav ul li:nth-last-child(n+3) { display: none; } }
 
   /* hero */
   .hero { padding: 72px 0 56px; }
@@ -71,6 +71,9 @@
   .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px; font-weight: 600; text-decoration: none; font-size: 15.5px; border: 1.5px solid var(--ink); color: var(--ink); background: transparent; }
   .btn.solid { background: var(--ink); color: #fff; }
   .btn:hover { transform: translateY(-1px); }
+  .btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .btn.ghost { border-color: transparent; background: var(--lav); color: #3F2E7A; }
+  .nav-cv { color: var(--accent) !important; font-weight: 700; }
   .ticker { margin-top: 30px; display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--ink-2); min-height: 26px; }
   .ticker b { font-weight: 600; color: var(--ink); }
   .ticker .dot { width: 9px; height: 9px; border-radius: 50%; background: #4CC38A; box-shadow: 0 0 0 4px rgba(76,195,138,.2); flex: none; }
@@ -225,6 +228,8 @@
   .links a { display: flex; align-items: center; gap: 10px; padding: 13px 16px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); text-decoration: none; font-weight: 600; font-size: 15px; min-width: 0; }
   .links a span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .links a:hover { border-color: var(--accent); }
+  .links a.cv { grid-column: 1 / -1; justify-content: center; background: var(--ink); color: #fff; border-color: var(--ink); }
+  .links a.cv svg { stroke: #fff; }
   .links svg { width: 22px; height: 22px; flex: none; fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
   .fine { font-size: 13px; color: var(--ink-2); margin-top: 26px; }
 
@@ -242,6 +247,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a class="nav-cv" href="assets/Sushruthi_Panakanti_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
     </ul>
   </div>
 </nav>
@@ -255,6 +261,7 @@
       <div class="cta">
         <a class="btn solid" href="#work">See my work</a>
         <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="assets/Sushruthi_Panakanti_Resume.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 19.5h14"/></svg>Resume</a>
       </div>
       <p class="ticker" aria-live="polite"><span class="dot" aria-hidden="true"></span><span class="t" id="ticker"><b>Currently:</b> building a new image analysis pipeline</span></p>
     </div>
@@ -566,7 +573,7 @@
   <div class="wrap">
     <div>
       <h2>Let's work together.</h2>
-      <p>Open to clinical research data roles. Based in Indianapolis, IN.</p>
+      <p>Open to research and clinical data roles. Based in Indianapolis, IN, and open to relocation.</p>
     </div>
     <div>
       <div class="links">
@@ -574,6 +581,7 @@
         <a href="https://www.linkedin.com/in/spanakanti/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10.5V17M8 7.5v.01M12 17v-6.5M12 13.2c0-1.6 1.1-2.7 2.5-2.7S17 11.4 17 13v4"/></svg><span>LinkedIn</span></a>
         <a href="https://github.com/psushruthi" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 7.5 4 12l4.5 4.5M15.5 7.5 20 12l-4.5 4.5M13.5 5l-3 14"/></svg><span>GitHub</span></a>
         <a href="https://psushruthi.github.io/amyloid-beta-microglia-website/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span>Project site</span></a>
+        <a class="cv" href="assets/Sushruthi_Panakanti_Resume.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 19.5h14"/></svg><span>Download my resume (PDF)</span></a>
       </div>
       <p class="fine">Sushruthi Panakanti, BDS, MSHI</p>
     </div>
